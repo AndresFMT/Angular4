@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ContentComponent implements OnInit {
 
-	datos:any
+	datos:any;
 	sub:any;
 	titulo:string;
 

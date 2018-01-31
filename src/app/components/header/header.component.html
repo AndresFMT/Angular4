@@ -5,13 +5,15 @@
     </div>
     <nav class="ee-navigation">
       <ul class="ee-menu">
-        <li class="ee-menu__item"> <a href="portfolio.html" class="ee-menu__link">Cursos</a>
+        <li class="ee-menu__item" routerLinkActive= "active">
+          <a [routerLink]="['/content/2']" class="ee-menu__link">Cursos</a>
         </li>
-        <li class="active ee-menu__item"><a href="portfolio.html" class="ee-menu__link">Centros</a>
+        <li class="ee-menu__item" routerLinkActive= "active">
+          <a [routerLink]="['/content/1']" class="ee-menu__link">Centros</a>
         </li>
       </ul>
       <form class="ee-search">
-        <input type="text" placeholder="Search" id="ee-search" class="ee-search-field">
+        <input type="text" placeholder="Encuentra tu curso ideal" id="ee-search" class="ee-search-field">
         <label for="ee-search">
           <svg>
             <use xlink:href="assets/img/symbols.svg#icon-search"></use>
