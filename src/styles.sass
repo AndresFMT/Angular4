@@ -8,5 +8,18 @@ body
 	box-sizing: border-box
 	padding: 10px 0
 	font-family: $f-merry-r
+	.animated 
+	  animation-duration: 0.4s
+	  animation-fill-mode: both
+
+@keyframes fadeIn 
+  from 
+    opacity: 0
+  to 
+    opacity: 1
+
+.fadeIn 
+  animation-name: fadeIn
+
 
 
