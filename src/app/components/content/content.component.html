@@ -1,13 +1,51 @@
-<div>
-  {{ titulo }}
-  <ul>
-    <li *ngFor="let lista of datos">
-      {{ lista.titulo }}
-    </li>
-  </ul>
-  <ul>
-    <li *ngFor="let lista of datos">
-      <img src="{{ lista.imagen }}" >
-    </li>
-  </ul>
+<div class="wrapper">
+  <div class="ee-container-fluid" *ngIf="rt.url === '/content/2'">
+    <div class="ee-content" *ngFor="let lista of datos ">
+      <div class="ee-content-img">
+        <a href="{{lista.url}}">
+          <img src="{{ lista.imagen }}">
+        </a>
+      </div>
+      <div class="ee-content-text">
+        <a href="{{lista.url}}">
+          <h2>
+            {{ lista.titulo }}
+          </h2>
+          <p>
+            {{ lista.body }}
+          </p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class= "ee-content-centros" *ngIf="rt.url === '/content/1'">
+    <div class="ee-container-fluid">
+      <div class="ee-content" *ngFor="let lista of datos ">
+        <div class="ee-content-img">
+          <a href="{{lista.url}}">
+            <img src="{{ lista.imagen }}">
+          </a>
+        </div>
+        <div class="ee-content-text">
+          <a href="{{lista.url}}">
+            <h2>
+              {{ lista.titulo }}
+            </h2>
+            <p>
+              {{ lista.body }}
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="ee-content-button">
+      <div class="block-img">
+        <img src="assets/img/img-torre.svg" alt="">
+      </div>
+      <div class="block-button">
+        <p>Encuentra aquí tu Centro de Formación</p>
+        <button type="button"><a href="" title="" data-hover-label="VER DIRECTORIO"><span>VER DIRECTORIO</span></a></button>
+      </div>
+    </div>
+  </div> 
 </div>

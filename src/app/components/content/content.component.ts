@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../../services/service.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-content',
@@ -13,14 +13,13 @@ export class ContentComponent implements OnInit {
 	sub:any;
 	titulo:string;
 
-  constructor(private _service: ServiceService, private route: ActivatedRoute) {
+  constructor(private _service: ServiceService, private route: ActivatedRoute, private rt: Router) {
 
   }
 
   ngOnInit() {
 
   	this.sub = this.route.params.subscribe(params => {
-  		this.titulo = (params['id'] == 1) ? 'Centros' : 'Cursos';
       this.getJson(params['id']);
        // In a real app: dispatch action to load the details here.
     });
@@ -29,12 +28,11 @@ export class ContentComponent implements OnInit {
   getJson(id:number):void {
   	this._service.getService().subscribe (
 			(res:any) => {
-				this.datos = (id == 1) ? res.centros : res.cursos;
-				//this.datos=res.centros;
-				console.log(this.datos);
-				return this.datos;
-			}
-		)
+        res.centros = res.centros.slice(0,2);
+        this.datos = (id == 1) ? res.centros : res.cursos;
+        return this.datos;
+      }
+    )
   }
 
 }

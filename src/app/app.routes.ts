@@ -1,8 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 
 import {
-	CentrosComponent,
-	CursosComponent,
+	
 	ContentComponent
 
 } from "./components/index.paginas";
